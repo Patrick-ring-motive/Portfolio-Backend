@@ -1,4 +1,4 @@
-const express = require('express'); 
+const express = require('express');
 const path = require('path');
 const session = require('express-session');
 const passport = require('passport');
@@ -30,7 +30,9 @@ const sessionStore = new MySQLStore(options, pool.promise());
 // Middleware to parse cookies and JSON bodies
 app.use(cookieParser());
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
 
 // Enable CORS with credentials to allow cookie usage across origins
 app.use(cors({
